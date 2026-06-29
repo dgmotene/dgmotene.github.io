@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dalton Motene — Backend Engineer based in Johannesburg. Java, Spring Boot, microservices, PostgreSQL." />
+  <title>Dalton Motene · Backend Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot"  aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Scroll progress -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Background canvas -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  NAV                                                    -->
+<!-- ─────────────────────────────────────────────────────── -->
+<header id="nav" role="banner">
+  <div class="wrap nav-inner">
+    <span class="nav-logo" aria-label="Dalton Motene">dalton.m</span>
+
+    <nav aria-label="Site navigation">
+      <ul class="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="mailto:daltonmotene@gmail.com" class="nav-cta" aria-label="Email Dalton">
+      <span class="dot" aria-hidden="true"></span>
+      Available
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Navigation">
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  HERO                                                   -->
+<!-- ─────────────────────────────────────────────────────── -->
+<main class="page-body">
+<section id="hero" aria-label="Introduction">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- Left: copy -->
+      <div>
+        <div class="hero-eyebrow">
+          <span class="line" aria-hidden="true"></span>
+          Backend Engineer · Johannesburg
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="line-1">Dalton</span>
+          <span class="line-2">Motene.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Building resilient, event-driven systems with Java &amp; Spring Boot.
+          HND Software Engineering candidate at WeThinkCode_ —
+          turning distributed complexity into clean, observable microservices.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-solid">
+            View Projects
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/dgmotene" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            GitHub
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="mailto:daltonmotene@gmail.com" class="btn btn-ghost">Get in touch</a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <div class="stat-n" data-count="6" data-suffix="+">0</div>
+            <div class="stat-l">Projects shipped</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-n">NQF 6</div>
+            <div class="stat-l">HND in progress</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-n" data-count="2" data-suffix="yr">0</div>
+            <div class="stat-l">Engineering focus</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: live-typing code card -->
+      <div class="hero-card" aria-hidden="true">
+        <div class="card-titlebar">
+          <span class="card-dot d-red"></span>
+          <span class="card-dot d-amber"></span>
+          <span class="card-dot d-green"></span>
+          <span class="card-filename">DaltonMotene.java</span>
+        </div>
+        <div class="card-body">
+          <div id="type-target"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  SKILLS                                                 -->
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="skills" class="section section--alt" aria-label="Technical skills">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow"><span class="line" aria-hidden="true"></span>What I work with</div>
+      <h2 class="section-h2">Technical Skills</h2>
+      <p class="section-lead">A backend-first toolbox, built through real projects and a structured, self-directed roadmap.</p>
+    </div>
+
+    <div class="skills-layout">
+      <!-- Skill bars -->
+      <div class="reveal-left">
+        <div class="skill-group">
+          <div class="skill-group-label">Core Stack</div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Java &amp; Spring Boot</span>
+              <span class="skill-bar-pct">90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="90" style="width:0"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">REST API Design</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="88" style="width:0"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">PostgreSQL</span>
+              <span class="skill-bar-pct">80%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="80" style="width:0"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Apache ActiveMQ / Messaging</span>
+              <span class="skill-bar-pct">75%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="75" style="width:0"></div>
+            </div>
+          </div>
+
+          <div class="skill-group-label" style="margin-top:28px;">DevOps &amp; Cloud</div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Docker &amp; CI/CD</span>
+              <span class="skill-bar-pct">78%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill amber" data-pct="78" style="width:0"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">AWS (foundational)</span>
+              <span class="skill-bar-pct">60%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill amber" data-pct="60" style="width:0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech cloud -->
+      <div class="reveal-right">
+        <div class="skill-group-label">All Technologies</div>
+        <div class="tech-cloud stagger">
+          <span class="tech-pill">Java</span>
+          <span class="tech-pill">Spring Boot</span>
+          <span class="tech-pill">Microservices</span>
+          <span class="tech-pill">REST APIs</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Apache ActiveMQ</span>
+          <span class="tech-pill">Redis</span>
+          <span class="tech-pill">RabbitMQ</span>
+          <span class="tech-pill">Docker</span>
+          <span class="tech-pill">GitHub Actions</span>
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Flask</span>
+          <span class="tech-pill">C# / .NET Core</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Maven</span>
+          <span class="tech-pill">Prometheus</span>
+          <span class="tech-pill">Grafana</span>
+          <span class="tech-pill">Twilio</span>
+          <span class="tech-pill">Africa's Talking</span>
+          <span class="tech-pill">JUnit</span>
+          <span class="tech-pill">SQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  PROJECTS                                               -->
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="projects" class="section" aria-label="Projects">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow"><span class="line" aria-hidden="true"></span>What I've built</div>
+      <h2 class="section-h2">Projects</h2>
+      <p class="section-lead">Real systems covering event-driven architecture, distributed services, and practical problem-solving.</p>
+    </div>
+
+    <div class="projects-grid stagger">
+
+      <!-- Featured: LightSched -->
+      <div class="project-card featured">
+        <div>
+          <div class="project-meta">
+            <div class="project-icon">⚡</div>
+            <div class="project-links">
+              <a href="https://github.com/dgmotene" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-title">LightSched</div>
+          <div class="project-desc">
+            Multi-module Maven microservices system simulating Eskom's loadshedding schedule.
+            Six modules (common, places, stage, schedule, web, alert) communicating via
+            Apache ActiveMQ topics and queues. CSV-parsed South African place data,
+            REST-accessible web layer, and real-time stage broadcasting.
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Java</span>
+            <span class="stack-tag">Spring Boot</span>
+            <span class="stack-tag">ActiveMQ</span>
+            <span class="stack-tag">Maven</span>
+            <span class="stack-tag">REST</span>
+            <span class="stack-tag">CSV parsing</span>
+          </div>
+        </div>
+        <div>
+          <div class="card-titlebar" style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;margin-top:4px;">
+            <span class="card-dot d-red"></span>
+            <span class="card-dot d-amber"></span>
+            <span class="card-dot d-green"></span>
+            <span class="card-filename">Architecture</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:20px;font-family:var(--mono);font-size:12px;line-height:2;color:var(--text-mid);">
+            <span style="color:var(--teal)">places-svc</span> → <span style="color:var(--amber)">ActiveMQ Topic</span><br>
+            &nbsp;&nbsp;├─ <span style="color:var(--teal)">stage-svc</span> (subscriber)<br>
+            &nbsp;&nbsp;├─ <span style="color:var(--teal)">schedule-svc</span> (subscriber)<br>
+            &nbsp;&nbsp;└─ <span style="color:var(--teal)">alert-svc</span> (queue consumer)<br>
+            <span style="color:var(--text-dim)">web-svc</span> ← REST → <span style="color:var(--text-dim)">schedule-svc</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather Buddy -->
+      <div class="project-card">
+        <div class="project-meta">
+          <div class="project-icon">🌤️</div>
+          <div class="project-links">
+            <a href="https://github.com/dgmotene" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-title">Weather Buddy</div>
+        <div class="project-desc">
+          Eight-sprint capstone: weather aggregation and SMS notification service
+          with Redis caching, RabbitMQ async processing, Prometheus metrics,
+          and full Docker + CI/CD pipeline from day one.
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Redis</span>
+          <span class="stack-tag">RabbitMQ</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">Prometheus</span>
+          <span class="stack-tag">Twilio</span>
+        </div>
+      </div>
+
+      <!-- ShieldNumber -->
+      <div class="project-card">
+        <div class="project-meta">
+          <div class="project-icon">🛡️</div>
+          <div class="project-links">
+            <a href="https://github.com/dgmotene" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-title">ShieldNumber</div>
+        <div class="project-desc">
+          Proxy phone number app for personal safety. Real contact details stay private —
+          a masked number handles all inbound calls and messages.
+          Built on Spring Boot with Africa's Talking integration.
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Africa's Talking</span>
+          <span class="stack-tag">Twilio</span>
+          <span class="stack-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- AI Interview Prep -->
+      <div class="project-card">
+        <div class="project-meta">
+          <div class="project-icon">🤖</div>
+          <div class="project-links">
+            <a href="https://github.com/dgmotene" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-title">AI Interview Prep</div>
+        <div class="project-desc">
+          Role-aware interview preparation platform. Spring Boot orchestrates
+          a Python/Flask ML microservice for AI-generated questions
+          and structured feedback loops. Portfolio project targeting
+          engineering employers.
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Flask</span>
+          <span class="stack-tag">Microservices</span>
+          <span class="stack-tag">REST</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  EXPERIENCE                                             -->
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="experience" class="section section--alt" aria-label="Work experience">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow"><span class="line" aria-hidden="true"></span>Where I've been</div>
+      <h2 class="section-h2">Experience</h2>
+      <p class="section-lead">Learning and contributing at the same time.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-period">2024 – Present</div>
+        <div class="timeline-role">Peer Tutor</div>
+        <div class="timeline-org">WeThinkCode_ · Johannesburg</div>
+        <div class="timeline-body">
+          Support cohort students across core curriculum modules — DSA, Java OOP, system design,
+          and Spring Boot project work. Run structured review sessions, produce annotated
+          session notes, and compile submission evidence for KwantuGo log reviews.
+        </div>
+        <div class="timeline-tags">
+          <span class="t-tag">Java</span>
+          <span class="t-tag">DSA</span>
+          <span class="t-tag">Mentoring</span>
+          <span class="t-tag">Technical Writing</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-period">2023 – Present</div>
+        <div class="timeline-role">Software Engineering Student — HND (NQF Level 6)</div>
+        <div class="timeline-org">WeThinkCode_ · Johannesburg</div>
+        <div class="timeline-body">
+          Full-time immersive engineering programme. Delivered production-style projects covering
+          microservices architecture, event-driven systems, REST API design, containerisation,
+          and CI/CD. Active hackathon competitor — Gradhack 2026 finalist (Discovery Health).
+        </div>
+        <div class="timeline-tags">
+          <span class="t-tag">Spring Boot</span>
+          <span class="t-tag">Microservices</span>
+          <span class="t-tag">Docker</span>
+          <span class="t-tag">CI/CD</span>
+          <span class="t-tag">Gradhack 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  CONTACT                                                -->
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="contact" aria-label="Contact">
+  <div class="wrap">
+    <div class="contact-wrap reveal">
+      <div class="eyebrow" style="justify-content:center;">
+        <span class="line" aria-hidden="true"></span>
+        Let's work together
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <h2 class="contact-h2">Open to<br><em>opportunities</em></h2>
+      <p class="contact-sub">
+        Looking for graduate, learnership, and junior backend engineering roles
+        in Johannesburg and beyond. I build fast, learn faster.
+      </p>
+      <a href="mailto:daltonmotene@gmail.com" class="contact-email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        daltonmotene@gmail.com
+      </a>
+      <div class="contact-social">
+        <a href="https://github.com/dgmotene" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          GitHub ↗
+        </a>
+        <a href="https://linkedin.com/in/dalton-motene" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          LinkedIn ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<!--  FOOTER                                                 -->
+<!-- ─────────────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap footer-inner">
+    <p class="footer-copy">Designed &amp; built by <span>Dalton Motene</span> · daltonm.co.za</p>
+    <div class="footer-links">
+      <a href="https://github.com/dgmotene" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:daltonmotene@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts (deferred) -->
+<script src="js/main.js" defer></script>
+</body>
+</html>
